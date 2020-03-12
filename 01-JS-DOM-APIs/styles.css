@@ -37,3 +37,8 @@ header {
     font-size: 20px;
     text-align: center;
 }
+
+#repositories {
+    text-align: right;
+    
+}
