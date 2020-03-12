@@ -32,3 +32,8 @@ header {
     font-weight: bold;
     font-size: 1em;
 }
+
+.btn {
+    font-size: 20px;
+    text-align: center;
+}
