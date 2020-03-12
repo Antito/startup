@@ -42,3 +42,8 @@ header {
     text-align: right;
     
 }
+
+#table {
+    text-align: center;
+    color: lightcoral;
+}

@@ -49,5 +49,60 @@ function repositories(e) {
        
     });
 
-
 }
+
+var product = [
+    {
+      name: "Oil",
+      price: "$100"
+    },
+    {
+      name: "Sugar",
+      price: "$70"
+    },
+    {
+      name: "Tea",
+      price: "$50"
+    },
+    {
+      name: "Rice",
+      price: "$75"
+    },
+    {
+      name: "Flour",
+      price: "$60"
+    },
+    {
+      name: "Beer",
+      price: "$150"
+    }
+  ]
+  
+  function createTable(product){
+
+    let table = document.createElement("table");
+   
+    table.setAttribute("class", "generatedTable");
+  
+    var tr = document.createElement("tr");
+    var th = document.createElement("th");
+    th.appendChild(document.createTextNode('Name')); 
+    tr.appendChild(th);
+    var th = document.createElement("th");
+    th.appendChild(document.createTextNode('Price'));
+    tr.appendChild(th);
+    table.appendChild(tr);
+  
+    for (let i = 0; i < product.length; i++) {
+      let tr = document.createElement('tr');
+      let tdName = document.createElement('td');
+      let tdPrice = document.createElement('td');
+      tdName.appendChild(document.createTextNode(product[i].name));
+      tdPrice.appendChild(document.createTextNode(product[i].price));
+      tr.appendChild(tdName);
+      tr.appendChild(tdPrice);
+      table.appendChild(tr);
+    }
+  
+    document.getElementById("table").appendChild(table);
+  }
