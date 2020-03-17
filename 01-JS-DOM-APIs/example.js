@@ -1,30 +1,28 @@
-let section = document.getElementById("hidden");
-window.onload = () => section.style.opacity =1;
+let hiddenSection = document.getElementById("hidden");
+window.onload = () => hiddenSection.style.opacity =1;
 
-function callbutton()
-{
+function alertMessage() {
     alert("Se ha llamado al boton");
 }
 
 function clickbutton() {
-        fetchDatos();
+    findRandomJoke();
 }
 
 document.getElementById('boton').onclick = clickbutton; 
     
 
-function fetchDatos()
-{
+function findRandomJoke() {
     fetch('http://api.icndb.com/jokes/random')
-    .then(function(response){
+    .then(function(response) {
         return response.json();
     })
-    .then(function(json){
+    .then(function(json) {
         hidden.innerHTML = json.value.joke;
     })
-    .catch(function(err){
+    .catch(function(err) {
         console.error(err);
-        section.style.background = 'red';
+        hiddenSection.style.background = 'red';
     });
 }
 
@@ -32,10 +30,10 @@ function repositories(e) {
     e.preventDefault();
     let parameter = document.getElementById('text').value;
     fetch('https://api.github.com/search/repositories?q='+parameter)
-    .then(function(response){
+    .then(function(response) {
         return response.json();
     })
-    .then(function(data){
+    .then(function(data) {
         var repositories = document.getElementById("repositories");
         repositories.innerHTML="";
         var list = data.items;
@@ -44,7 +42,7 @@ function repositories(e) {
             repositories.innerHTML += "<li>"+list[i].name+"</li>";
         }
     })
-    .catch(function(err){
+    .catch(function(err) {
         console.error(err);
        
     });
@@ -78,7 +76,7 @@ var product = [
     }
   ]
   
-  function createTable(product){
+  function createTable(product) {
 
     let table = document.createElement("table");
    
