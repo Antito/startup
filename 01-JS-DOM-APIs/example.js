@@ -26,26 +26,46 @@ function findRandomJoke() {
     });
 }
 
-function repositories(e) {
-    e.preventDefault();
-    let parameter = document.getElementById('text').value;
-    fetch('https://api.github.com/search/repositories?q='+parameter)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        var repositories = document.getElementById("repositories");
-        repositories.innerHTML="";
-        var list = data.items;
-        for(var i = 0; i < list.length;i++){
+function ManejadorDeEvento(e) {
+  e.preventDefault();
+}
 
-            repositories.innerHTML += "<li>"+list[i].name+"</li>";
-        }
-    })
-    .catch(function(err) {
-        console.error(err);
-       
-    });
+function CallServiceWeb() {
+  let parameter = document.getElementById('text').value;
+  fetch('https://api.github.com/search/repositories?q='+parameter)
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data) {
+
+    RenderingRepo(data);
+  })
+  .catch(function(err) {
+    ErrorNotification(err);
+  });
+
+}
+
+function RenderingRepo(data) {
+  
+  var repositories = document.getElementById("repositories");
+  repositories.innerHTML="";
+  var list = data.items;
+  for(var i = 0; i < list.length;i++) {
+
+      repositories.innerHTML += "<li>"+list[i].name+"</li>";
+  }
+}
+
+
+function ErrorNotification(err) {
+  console.error(err);
+}
+
+
+function repositories(e) {
+  ManejadorDeEvento(e);
+  CallServiceWeb();
 
 }
 
