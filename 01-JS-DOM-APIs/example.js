@@ -1,5 +1,5 @@
-let hiddenSection = document.getElementById("hidden");
-window.onload = () => hiddenSection.style.opacity =1;
+let hiddenSection = document.querySelector(".hidden");
+window.onload = () => hiddenSection.style.opacity = 1;
 
 function alertMessage() {
     alert("Se ha llamado al boton");
@@ -18,7 +18,7 @@ function findRandomJoke() {
         return response.json();
     })
     .then(function(json) {
-        hidden.innerHTML = json.value.joke;
+        hiddenSection.innerHTML = json.value.joke;
     })
     .catch(function(err) {
         console.error(err);
