@@ -110,6 +110,15 @@ class Actor {
   }
 }
 
+class Logger {
+  constructor() {
+
+  }
+  log(info) {
+    console.log(info);
+  }
+}
+
 
 /*--Ejercicio 1--*/
 var movie1 = new Movie("Harry Potter and the philosopher's stone",2001,"2h 39m")
@@ -152,6 +161,12 @@ const actors = [
 terminator.addCast(arnold);
 terminator.addCast(actors);
 console.log(terminator.cast);
+
+//Make an instance of Logger and make it listen to Movie's play event
+let logger = new Logger();
+
+terminator.on("play",() => { logger.log("Play event emitted") });
+terminator.play(); //Output: Play event emitted and then Playing...
 
 
 
