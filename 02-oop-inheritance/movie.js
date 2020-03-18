@@ -168,5 +168,20 @@ let logger = new Logger();
 terminator.on("play",() => { logger.log("Play event emitted") });
 terminator.play(); //Output: Play event emitted and then Playing...
 
+/*--Ejercicio 4--*/
+let social = {
+  share(friendName) {
+    console.log(`${friendName} share ${this.title}`);
+  },
+  like(friendName) {
+    console.log(`${friendName} like ${this.title}`);
+  }
+};
 
+const ironman = new Movie('Iron man',2008,'2h 6m');
+
+Object.assign(ironman,social);
+
+ironman.share('Mike Blossom'); //Output: Mike Blossom share Iron man
+ironman.like('Antonella Buono'); //Output: Antonella Buono like Iron man
 
