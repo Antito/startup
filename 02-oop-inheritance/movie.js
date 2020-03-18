@@ -8,9 +8,7 @@ export default class Movie extends EventEmitter {
     this._year = year;
     this._duration = duration;
     this.cast = [];
-   
   }
-
   get title() {
     return this._title;
   }
@@ -21,35 +19,31 @@ export default class Movie extends EventEmitter {
     return this._year;
   }
   set year(year) {
-    this._year=year;
+    this._year = year;
   }
   get duration() {
     return this._duration;
   }
   set duration(duration) {
-    this._duration=duration;
+    this._duration = duration;
   }
   get cast() {
     return this._cast;
   }
   set cast(cast) {
-    this._cast=cast;
+    this._cast = cast;
   }
 
   play() {
     super.emit("play");
-    console.log("Playing..");
   }
 
   pause() {
     super.emit("pause");
-    console.log("Pause..");
   }
 
   resume() {
     super.emit("resume");
-    console.log("Resume..");
-    
   }
 
   addCast(cast) {

@@ -1,4 +1,3 @@
-
 import Actor from './Actor.js';
 import EventEmitter from './EventEmitter.js';
 import Logger from './Logger.js';
