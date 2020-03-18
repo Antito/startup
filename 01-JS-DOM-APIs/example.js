@@ -96,25 +96,38 @@ var product = [
     }
   ]
   
+  function createRow() {
+    var tr = document.createElement("tr");
+    return tr;
+  }
+  
+  function createHeader() {
+    var th = document.createElement("th");
+    return th;
+  }
+  
+  function createColumn() {
+    let td = document.createElement('td');
+    return td;
+  }
+  
   function createTable(product) {
-
+  
     let table = document.createElement("table");
-   
     table.setAttribute("class", "generatedTable");
   
-    var tr = document.createElement("tr");
-    var th = document.createElement("th");
+    var tr = createRow();
+    var th = createHeader();
     th.appendChild(document.createTextNode('Name')); 
     tr.appendChild(th);
-    var th = document.createElement("th");
     th.appendChild(document.createTextNode('Price'));
     tr.appendChild(th);
     table.appendChild(tr);
   
     for (let i = 0; i < product.length; i++) {
       let tr = document.createElement('tr');
-      let tdName = document.createElement('td');
-      let tdPrice = document.createElement('td');
+      let tdName = createColumn();
+      let tdPrice = createColumn();
       tdName.appendChild(document.createTextNode(product[i].name));
       tdPrice.appendChild(document.createTextNode(product[i].price));
       tr.appendChild(tdName);
