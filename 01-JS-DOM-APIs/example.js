@@ -2,35 +2,30 @@ let hiddenSection = document.querySelector(".hidden");
 window.onload = () => hiddenSection.style.opacity = 1;
 
 function alertMessage() {
-    alert("Se ha llamado al boton");
+  alert("Se ha llamado al boton");
+}
+function handleFetchData() {
+  findRandomJoke();
 }
 
-function clickbutton() {
-    findRandomJoke();
-}
-
-document.getElementById('boton').onclick = clickbutton; 
+document.getElementById('boton').onclick = handleFetchData; 
     
-
 function findRandomJoke() {
-    fetch('http://api.icndb.com/jokes/random')
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(json) {
-        hiddenSection.innerHTML = json.value.joke;
-    })
-    .catch(function(err) {
-        console.error(err);
-        hiddenSection.style.background = 'red';
-    });
+  fetch('http://api.icndb.com/jokes/random')
+  .then(function(response) {
+      return response.json();
+  })
+  .then(function(json) {
+      hiddenSection.innerHTML = json.value.joke;
+  })
+  .catch(function(err) {
+      console.error(err);
+      hiddenSection.style.background = 'red';
+  });
 }
 
-function ManejadorDeEvento(e) {
+function fetchRepositoriesList(e) {
   e.preventDefault();
-}
-
-function CallServiceWeb() {
   let parameter = document.getElementById('text').value;
   fetch('https://api.github.com/search/repositories?q='+parameter)
   .then(function(response){
@@ -38,16 +33,14 @@ function CallServiceWeb() {
   })
   .then(function(data) {
 
-    RenderingRepo(data);
+    renderingRepository(data);
   })
   .catch(function(err) {
-    ErrorNotification(err);
+    errorNotification(err);
   });
-
 }
 
-function RenderingRepo(data) {
-  
+function renderingRepository(data) {
   var repositories = document.getElementById("repositories");
   repositories.innerHTML="";
   var list = data.items;
@@ -57,60 +50,49 @@ function RenderingRepo(data) {
   }
 }
 
-
-function ErrorNotification(err) {
+function errorNotification(err) {
   console.error(err);
 }
 
-
-function repositories(e) {
-  ManejadorDeEvento(e);
-  CallServiceWeb();
-
-}
-
 var product = [
-    {
-      name: "Oil",
-      price: "$100"
-    },
-    {
-      name: "Sugar",
-      price: "$70"
-    },
-    {
-      name: "Tea",
-      price: "$50"
-    },
-    {
-      name: "Rice",
-      price: "$75"
-    },
-    {
-      name: "Flour",
-      price: "$60"
-    },
-    {
-      name: "Beer",
-      price: "$150"
-    }
-  ]
+  {
+    name: "Oil",
+    price: "$100"
+  },
+  {
+    name: "Sugar",
+    price: "$70"
+  },
+  {
+    name: "Tea",
+    price: "$50"
+  },
+  {
+    name: "Rice",
+    price: "$75"
+  },
+  {
+    name: "Flour",
+    price: "$60"
+  },
+  {
+    name: "Beer",
+    price: "$150"
+  }
+]
   
   function createRow() {
     var tr = document.createElement("tr");
     return tr;
   }
-  
   function createHeader() {
     var th = document.createElement("th");
     return th;
   }
-  
   function createColumn() {
     let td = document.createElement('td');
     return td;
   }
-  
   function createTable(product) {
   
     let table = document.createElement("table");
@@ -134,6 +116,5 @@ var product = [
       tr.appendChild(tdPrice);
       table.appendChild(tr);
     }
-  
     document.getElementById("table").appendChild(table);
   }
