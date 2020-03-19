@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript and DOM APIs</title>
+    <link href="normalize.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>Lorem Ipsum</header>
+    <section>
+        <header class="section-header">Article 1</header>
+        <article><h4>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</h4></article>
+        <br><br>
+        <button id="boton" class="btn">More Information</button>
+      </section>
+    
+    <section class="hidden">  
+        <header class="section-header">Article 2</header>
+        <article>Hello World</article>
+    </section>
+    <section>
+        <form>
+            <input id="text" type="text">
+            <button onclick="fetchRepositoriesList(event)" class="btn">Search</button>
+        </form>
+        <ul id="repositories">
+        </ul>
+    </section>
+    <br>
+    <section>
+        <button class="btn" onclick="createTable(product)">Products Price</button>
+        <p id="table"></p>
+    </section>
+    <footer></footer>
+    <script src="example.js"></script>
+</body>
+</html>
