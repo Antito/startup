@@ -1,0 +1,7 @@
+-numeros complejos
+1) estadistica : frecuencia acumulada, relativa, grafico de barras y circular, histograma y pictograma) 
+-sucesiones
+-logaritmos y ln
+-resolucion de triangulo rectangulo
+-teorema de pitagoras
+
