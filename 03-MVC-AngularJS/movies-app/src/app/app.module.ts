@@ -7,11 +7,13 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './movies/movie-list/movie-list.component';
+import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovieListComponent
+    MovieListComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,

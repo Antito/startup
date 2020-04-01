@@ -1,29 +1,29 @@
-.title{
-  background-color: #ed6d7f;
-  padding: .1em;
-  color: #f4f1c1;
-  font-size: 2em;
-  margin: 30px;
+.title {
+  background-color : #ed6d7f;
+  padding : .1em;
+  color : #725a5a;
+  font-size : 2em;
+  margin : 30px;
+  border-radius : 5px;
 }
 .movies {
-    margin: 0 0 2em 0;
-    list-style-type: disc;
-    padding: 5;
-    width: 20em;
-
+    margin : 0 0 2em 0;
+    list-style-type : disc;
+    padding : 5;
+    width : 20em;
+    font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   .movies li {
-    position: relative;
-    left: 0;
-    background-color: #ecf2e4;
-    margin: .5em;
-    padding: .3em 0;
-    height: 3em;
-    border-radius: 4px;
-    
+    position : relative;
+    left : 0;
+    background-color : gainsboro;
+    margin : .5em;
+    padding : .3em 0;
+    height : 3em;
+    border-radius : 4px;
   }
   .movies li:hover {
-    color: #ed6d7f;
-    background-color: #f4f1c1;
-    left: .3em;
+    color : #ed6d7f;
+    background-color : #f4f1c1;
+    left : .3em;
   }
