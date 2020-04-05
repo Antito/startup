@@ -1,0 +1,26 @@
+.container {
+  margin: 0 0 0 2em ;
+  float: left;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #ed6d7f;
+  border-radius: 5px;
+}
+.title {
+ color: #725a5a;
+ margin: .5em;
+ padding: .3em;
+ background-color: gainsboro;
+ border-radius: 5px;
+}
+.item {
+  position: relative;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: .5em;
+  padding: .3em ;
+  height: 2em;
+  border-radius: 5px;
+  font-size: 1.5em;
+  color: #866d6d;
+  background-color: gainsboro;
+  line-height: 3em;
+}
